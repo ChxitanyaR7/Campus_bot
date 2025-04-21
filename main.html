@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VCET CampusBot</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/map.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>CampusBot</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="#" id="logoutBtn">Logout</a>
+            </div>
+            <div class="mobile-nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main id="home">
+        <div class="dashboard-container">
+            <h2>Welcome to VCET CampusBot</h2>
+            <div class="user-info">
+                <p>Hello, <span id="userEmail">User</span>!</p>
+            </div>
+            
+            <!-- Feature Navigation -->
+            <div class="feature-navigation">
+                <div class="feature-card active" data-target="chat-section">
+                    <i class="fas fa-comments"></i>
+                    <h4>Chat</h4>
+                </div>
+                <div class="feature-card" data-target="map-section">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>Campus Map</h4>
+                </div>
+                <div class="feature-card" data-target="events-section">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h4>Events</h4>
+                </div>
+                <div class="feature-card" data-target="resources-section">
+                    <i class="fas fa-book"></i>
+                    <h4>Resources</h4>
+                </div>
+            </div>
+            
+            <!-- Chat Section -->
+            <div class="content-section chat-section active">
+                <h3>Ask me anything about your campus</h3>
+                <div class="chat-container">
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message bot">
+                            <div class="message-content">Hello! I'm your VCET CampusBot. How can I help you today?</div>
+                        </div>
+                    </div>
+                    <form id="chatForm" class="chat-input">
+                        <input type="text" id="userMessage" placeholder="Type your question here..." autocomplete="off">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Map Section -->
+            <div class="content-section map-section">
+                <h3>Campus Map & Locations</h3>
+                <div class="map-container">
+                    <!-- Replace this placeholder with your actual map iframe -->
+                    <div class="map-iframe-container" style="width:100%; height:600px; overflow:visible; position: relative;">
+                        <iframe src="map.html" style="width:100%; height:100%; border:none;"></iframe>
+                    </div>
+                    
+                    <div class="location-list">
+                        <h4>Important Locations</h4>
+                        <ul>
+                            <li><i class="fas fa-building"></i> Main Administrative Building</li>
+                            <li><i class="fas fa-book"></i> Central Library</li>
+                            <li><i class="fas fa-utensils"></i> Cafeteria</li>
+                            <li><i class="fas fa-laptop-code"></i> Computer Labs</li>
+                            <li><i class="fas fa-dumbbell"></i> Sports Complex</li>
+                            <li><i class="fas fa-bed"></i> Hostels</li>
+                        </ul>
+                        <button class="location-details-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Events Section -->
+            <div class="content-section events-section">
+                <h3>Upcoming Campus Events</h3>
+                <div class="events-container">
+                    <div class="event-card highlight-event">
+                        <div class="event-date">
+                            <span class="day">13</span>
+                            <span class="month">MAY</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>University Summer Exam 2025</h4>
+                            <p><i class="fas fa-clock"></i> 02:30 PM - 05:30 PM</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Examination Hall</p>
+                            <p><i class="fas fa-book"></i> Engineering Mathematics-IV</p>
+                        </div>
+                        <button class="event-register-btn view-schedule-btn">View Full Schedule</button>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="day">11</span>
+                            <span class="month">APR</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>Internal Assessment-II Exams</h4>
+                            <p><i class="fas fa-clock"></i> 11:30 AM - 4:30 PM</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Multiple Classrooms</p>
+                            <p><i class="fas fa-graduation-cap"></i> For SE, TE, BE Students</p>
+                        </div>
+                        <button class="event-register-btn view-internal-schedule-btn">View Schedule</button>
+                    </div>
+                    
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="day">22</span>
+                            <span class="month">APR</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>Workshop on AI</h4>
+                            <p><i class="fas fa-clock"></i> 10:00 AM - 4:00 PM</p>
+                            <p><i class="fas fa-map-marker-alt"></i> CS Seminar Hall</p>
+                        </div>
+                        <button class="event-register-btn">Register</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Resources Section -->
+            <div class="content-section resources-section">
+                <h3>Campus Resources</h3>
+                <div class="resources-container">
+                    <div class="resource-card highlight-resource">
+                        <i class="fas fa-calendar-check"></i>
+                        <h4>University Exam Schedule</h4>
+                        <p>S.E. Computer Summer 2025 Exam Timetable</p>
+                        <a href="#" class="resource-download-btn" id="viewUniversityExamSchedule">View</a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h4>Internal Assessment-II Time Table</h4>
+                        <p>Exam schedule for Even Semester (Apr 11-16, 2025)</p>
+                        <a href="#" class="resource-download-btn" id="viewExamSchedule">View</a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h4>Academic Calendar</h4>
+                        <p>Academic schedule for the current semester</p>
+                        <a href="assets/academic-calender.pdf" download="Academic_Calendar_2025.pdf" class="resource-download-btn">Download</a>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <i class="fas fa-book-open"></i>
+                        <h4>Course Materials</h4>
+                        <p>Access lecture notes and study resources</p>
+                        <a href="https://nss-frcrce-library.netlify.app/" class="resource-download-btn" target="_blank">Access</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> info@vcet.ac.in</p>
+                <p><i class="fas fa-phone"></i> +91 1234567890</p>
+                <p><i class="fas fa-map-marker-alt"></i> VCET Campus, Example Road, City</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home"><i class="fas fa-home"></i> Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="#" id="logoutBtn">Logout</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>            
+        </div>
+        
+        <!-- Add both modals directly to your HTML file -->
+        <div class="modal" id="universityExamModal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="university-header">
+                    <h2>University of Mumbai</h2>
+                    <div class="exam-ref">1T00734</div>
+                    <h3>EXAMINATION TIME TABLE</h3>
+                    <h4>Summer 2025</h4>
+                    <p class="program-title">PROGRAMME - S.E. (Computer) (Choice Based) (R-2020-21 'C' Scheme)</p>
+                    <p class="semester">SEMESTER - IV</p>
+                </div>
+                
+                <div class="exam-schedule-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Days and Dates</th>
+                                <th>Time</th>
+                                <th>Paper Code</th>
+                                <th>Paper</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tuesday, 13 May, 2025</td>
+                                <td>02:30 p.m. to 05:30 p.m.</td>
+                                <td>40521</td>
+                                <td>Engineering Mathematics-IV</td>
+                            </tr>
+                            <tr>
+                                <td>Thursday, 15 May, 2025</td>
+                                <td>02:30 p.m. to 05:30 p.m.</td>
+                                <td>40522</td>
+                                <td>Analysis of Algorithm</td>
+                            </tr>
+                            <tr>
+                                <td>Monday, 19 May, 2025</td>
+                                <td>02:30 p.m. to 05:30 p.m.</td>
+                                <td>40523</td>
+                                <td>Database Management System</td>
+                            </tr>
+                            <tr>
+                                <td>Wednesday, 21 May, 2025</td>
+                                <td>02:30 p.m. to 05:30 p.m.</td>
+                                <td>40524</td>
+                                <td>Operating System</td>
+                            </tr>
+                            <tr>
+                                <td>Friday, 23 May, 2025</td>
+                                <td>02:30 p.m. to 05:30 p.m.</td>
+                                <td>40525</td>
+                                <td>Microprocessors</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="important-notes">
+                    <h4>Important Notes:</h4>
+                    <ul>
+                        <li>The candidates appearing for the examination should report 20 minutes before the start of examination.</li>
+                        <li>Mobile phones and other electronic gadgets are prohibited in the examination hall.</li>
+                        <li>Change if any, in the time table shall be communicated on the university web site.</li>
+                    </ul>
+                    <div class="signature-block">
+                        <div class="location">Mumbai - 400 098</div>
+                        <!-- <div class="signatory">Dr. Pooja Raundale</div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Internal Assessment Modal -->
+        <div class="modal" id="examScheduleModal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div class="university-header">
+                    <h2>VCET Engineering College</h2>
+                    <h3>INTERNAL ASSESSMENT-II EXAM SCHEDULE</h3>
+                    <h4>April 2025</h4>
+                    <p class="semester">EVEN SEMESTER (2024-25)</p>
+                </div>
+                
+                <div class="exam-schedule-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>SE</th>
+                                <th>TE</th>
+                                <th>BE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">Monday, 11 April, 2025</td>
+                                <td>11:30 AM - 1:00 PM</td>
+                                <td>Engineering Mathematics-IV</td>
+                                <td>Software Engineering</td>
+                                <td>Big Data Analytics</td>
+                            </tr>
+                            <tr>
+                                <td>2:30 PM - 4:00 PM</td>
+                                <td>Analysis of Algorithm</td>
+                                <td>Computer Networks</td>
+                                <td>Information Security</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Tuesday, 12 April, 2025</td>
+                                <td>11:30 AM - 1:00 PM</td>
+                                <td>Database Management System</td>
+                                <td>Web Programming</td>
+                                <td>Mobile Computing</td>
+                            </tr>
+                            <tr>
+                                <td>2:30 PM - 4:00 PM</td>
+                                <td>Operating System</td>
+                                <td>Theoretical CS</td>
+                                <td>Machine Learning</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Wednesday, 13 April, 2025</td>
+                                <td>11:30 AM - 1:00 PM</td>
+                                <td>Microprocessors</td>
+                                <td>System Programming</td>
+                                <td>Cloud Computing</td>
+                            </tr>
+                            <tr>
+                                <td>2:30 PM - 4:00 PM</td>
+                                <td>-</td>
+                                <td>Data Mining</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="important-notes">
+                    <h4>Important Notes:</h4>
+                    <ul>
+                        <li>Students should be seated in the examination hall 10 minutes before the commencement of the examination.</li>
+                        <li>Mobile phones and other electronic gadgets are strictly prohibited in the examination hall.</li>
+                        <li>Students should bring their college ID cards and hall tickets for verification.</li>
+                    </ul>
+                    <div class="signature-block">
+                        <div class="signatory">Examination Committee</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add simple JavaScript to ensure modals work -->
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get modal elements
+            const universityExamModal = document.getElementById('universityExamModal');
+            const examScheduleModal = document.getElementById('examScheduleModal');
+            
+            // Get modal open buttons
+            const viewUniversityExamBtn = document.getElementById('viewUniversityExamSchedule');
+            const viewExamScheduleBtn = document.getElementById('viewExamSchedule');
+            const viewScheduleBtn = document.querySelector('.view-schedule-btn');
+            const viewInternalScheduleBtn = document.querySelector('.view-internal-schedule-btn');
+            
+            // Get all close buttons
+            const closeButtons = document.querySelectorAll('.close-modal');
+            
+            // Set up event listeners for university exam modal
+            if (viewUniversityExamBtn) {
+                viewUniversityExamBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    universityExamModal.style.display = 'block';
+                });
+            }
+            
+            if (viewScheduleBtn) {
+                viewScheduleBtn.addEventListener('click', function() {
+                    universityExamModal.style.display = 'block';
+                });
+            }
+            
+            // Set up event listeners for internal exam modal
+            if (viewExamScheduleBtn) {
+                viewExamScheduleBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    examScheduleModal.style.display = 'block';
+                });
+            }
+            
+            if (viewInternalScheduleBtn) {
+                viewInternalScheduleBtn.addEventListener('click', function() {
+                    examScheduleModal.style.display = 'block';
+                });
+            }
+            
+            // Close buttons
+            closeButtons.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    universityExamModal.style.display = 'none';
+                    examScheduleModal.style.display = 'none';
+                });
+            });
+            
+            // Close on outside click
+            window.addEventListener('click', function(e) {
+                if (e.target === universityExamModal) {
+                    universityExamModal.style.display = 'none';
+                }
+                if (e.target === examScheduleModal) {
+                    examScheduleModal.style.display = 'none';
+                }
+            });
+            
+            // Close on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    universityExamModal.style.display = 'none';
+                    examScheduleModal.style.display = 'none';
+                }
+            });
+            
+            // Apply CSS for the modals
+            console.log("Exam schedule modal scripts initialized");
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    // Don't apply to logout button or other special buttons
+                    if (this.id === 'logoutBtn') return;
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update active nav link
+                        document.querySelectorAll('.nav-links a').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // Feature navigation
+            document.querySelectorAll('.feature-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    // Remove active class from all feature cards
+                    document.querySelectorAll('.feature-card').forEach(c => {
+                        c.classList.remove('active');
+                    });
+                    
+                    // Add active class to clicked card
+                    this.classList.add('active');
+                    
+                    // Hide all content sections
+                    document.querySelectorAll('.content-section').forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    // Show the corresponding content section
+                    const targetSection = this.getAttribute('data-target');
+                    document.querySelector('.' + targetSection).classList.add('active');
+                });
+            });
+        });
+        </script>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 VCET CampusBot. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script>
+        // Initialize map after DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof initializeMapFunctionality === 'function') {
+                initializeMapFunctionality();
+            }
+        });
+    </script>
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/map.js" defer></script>
+    <script type="module" src="scripts/auth.js"></script>
+<script type="module" src="scripts/main.js"></script>
+<script type="module" src="scripts/map.js"></script>
+</body>
+</html>

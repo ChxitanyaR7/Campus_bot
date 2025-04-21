@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - VCET CampusBot</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>CampusBot</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="#" id="logoutBtn">Logout</a>
+            </div>
+            <div class="mobile-nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        <section class="page-section">
+            <div class="section-container">
+                <h2>About VCET CampusBot</h2>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="/assets/logo.jpg" alt="VCET Campus" class="about-img">
+                    </div>
+                    <div class="about-text">
+                        <h3>Your Smart Campus Assistant</h3>
+                        <p>VCET CampusBot is designed to enhance your campus experience by providing instant access to essential information, resources, and services.</p>
+                        <p>Launched in 2024, our digital assistant aims to bridge the gap between students, faculty, and campus information systems, making campus navigation simpler and more efficient.</p>
+                        
+                        <div class="about-features">
+                            <div class="feature">
+                                <i class="fas fa-robot"></i>
+                                <h4>AI-Powered</h4>
+                                <p>Using advanced AI to understand and respond to your queries in natural language</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-clock"></i>
+                                <h4>24/7 Availability</h4>
+                                <p>Access information anytime, even outside of office hours</p>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-mobile-alt"></i>
+                                <h4>Mobile Friendly</h4>
+                                <p>Optimized for all devices to serve you on the go</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mission-statement">
+                            <h4>Our Mission</h4>
+                            <p>To create a seamless, intuitive digital experience that empowers VCET students and faculty with instant access to campus information and resources.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="back-to-home">
+                    <a href="index.html" class="btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> info@vcet.ac.in</p>
+                <p><i class="fas fa-phone"></i> +91 1234567890</p>
+                <p><i class="fas fa-map-marker-alt"></i> VCET Campus, Example Road, City</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+                <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+                <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>            
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 VCET CampusBot. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile navigation toggle
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileNavToggle) {
+                mobileNavToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                });
+            }
+            
+            // Logout functionality
+            const logoutBtn = document.getElementById('logoutBtn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Add your logout logic here
+                    alert('Logout functionality will be implemented here.');
+                    // Redirect to login page or perform other logout actions
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - VCET CampusBot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>CampusBot</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="mobile-nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="login-main">
+        <div class="login-container">
+            <div class="login-header">
+                <h2>Create Account</h2>
+                <p>Register to access CampusBot features</p>
+                <div class="domain-note">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Only @vcet.edu.in email addresses are allowed to register</span>
+                </div>
+            </div>
+            <form class="login-form" id="registerForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required placeholder="yourname@vcet.edu.in">
+                </div>
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <select id="department" required>
+                        <option value="">Select Department</option>
+                        <option value="Computer Engineering">Computer Engineering</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Electronics & Telecommunication">Electronics & Telecommunication</option>
+                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                        <option value="Civil Engineering">Civil Engineering</option>
+                        <option value="Artificial Intelligence & Machine Learning">AI & ML</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="studentId">Student ID</label>
+                    <input type="text" id="studentId" required placeholder="Enter your student ID">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="Create a password">
+                    <small>Password must be at least 6 characters long</small>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" required placeholder="Confirm your password">
+                </div>
+                <button type="submit" class="login-button">Register</button>
+                <div class="register-link">
+                    <p>Already have an account? <a href="login.html">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@vcet.ac.in</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 VCET CampusBot. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="scripts/auth.js"></script>
+    <script type="module" src="scripts/register.js"></script>
+</body>
+</html>

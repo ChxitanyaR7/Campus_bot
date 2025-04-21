@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Campus Map</title>
+    <link rel="stylesheet" href="styles/map.css">
+
+  </head>
+<body>
+  <div class="map-container">
+    <div class="floor-navigation">
+        <button class="floor-btn active" data-floor="ground">Ground Floor</button>
+        <button class="floor-btn" data-floor="first">First Floor</button>
+        <button class="floor-btn" data-floor="second">Second Floor</button>
+        <button class="floor-btn" data-floor="third">Third Floor</button>
+        <button class="floor-btn" data-floor="fourth">Fourth Floor</button>
+        <button class="floor-btn" data-floor="fifth">Fifth Floor</button>
+    </div>
+    
+    <div class="search-box">
+      <input type="text" class="search-input" placeholder="Search for a location (e.g., Library, Computer Lab)">
+      <div class="search-results"></div>
+    </div>
+    
+    <div class="floor-map-container">
+        <div class="floor-map active" id="ground-floor">
+        <svg class="map-svg" viewBox="0 0 1000 600">
+          <!-- Main outline -->
+          <rect x="50" y="50" width="900" height="500" fill="#121212" stroke="#444" stroke-width="2"></rect>
+          
+          <!-- Rooms -->
+          <g class="room" data-room="Basic Workshop I" data-floor="ground">
+            <rect x="200" y="50" width="150" height="100" />
+            <text x="275" y="100" class="room-label" text-anchor="middle">Basic Workshop I</text>
+          </g>
+          
+          <g class="room" data-room="Civil HOD Cabin" data-floor="ground">
+            <rect x="400" y="50" width="100" height="70" />
+            <text x="450" y="85" class="room-label" text-anchor="middle">Civil HOD</text>
+          </g>
+          
+          <g class="room" data-room="Thermal Engg Lab" data-floor="ground">
+            <rect x="350" y="130" width="150" height="100" />
+            <text x="425" y="180" class="room-label" text-anchor="middle">Thermal Engg Lab</text>
+          </g>
+          
+          <g class="room" data-room="Material Testing Lab" data-floor="ground">
+            <rect x="550" y="50" width="150" height="100" />
+            <text x="625" y="100" class="room-label" text-anchor="middle">Material Testing Lab</text>
+          </g>
+          
+          <g class="room" data-room="Refrigerator and AC Lab" data-floor="ground">
+            <rect x="550" y="160" width="150" height="100" />
+            <text x="625" y="210" class="room-label" text-anchor="middle">Refrigerator and AC Lab</text>
+          </g>
+          
+          <g class="room" data-room="Applied Hydrolics Lab" data-floor="ground">
+            <rect x="750" y="50" width="150" height="100" />
+            <text x="825" y="100" class="room-label" text-anchor="middle">Applied Hydrolics Lab</text>
+          </g>
+          
+          <g class="room" data-room="Basic Workshop II" data-floor="ground">
+            <rect x="750" y="160" width="150" height="100" />
+            <text x="825" y="210" class="room-label" text-anchor="middle">Basic Workshop II</text>
+          </g>
+          
+          <g class="room" data-room="MECH HOD Cabin" data-floor="ground">
+            <rect x="750" y="270" width="100" height="70" />
+            <text x="800" y="305" class="room-label" text-anchor="middle">MECH HOD</text>
+          </g>
+          
+          <g class="room" data-room="Theory of Machines" data-floor="ground">
+            <rect x="200" y="350" width="150" height="100" />
+            <text x="275" y="400" class="room-label" text-anchor="middle">Theory of Machines</text>
+          </g>
+          
+          <g class="room" data-room="Fluid Mechanics Lab" data-floor="ground">
+            <rect x="400" y="350" width="150" height="100" />
+            <text x="475" y="400" class="room-label" text-anchor="middle">Fluid Mechanics Lab</text>
+          </g>
+          
+          <g class="room" data-room="Conference Room" data-floor="ground">
+            <rect x="150" y="200" width="150" height="100" />
+            <text x="225" y="250" class="room-label" text-anchor="middle">Conference Room</text>
+          </g>
+          
+          <g class="room" data-room="Seminar Hall" data-floor="ground">
+            <rect x="580" y="350" width="200" height="150" />
+            <text x="680" y="425" class="room-label" text-anchor="middle">Seminar Hall</text>
+          </g>
+          
+          <!-- Stairs and Lifts -->
+          <g class="room" data-room="Stairs 1" data-floor="ground">
+            <rect x="50" y="50" width="50" height="80" fill="#444" />
+            <text x="75" y="90" class="room-label" text-anchor="middle">Stairs</text>
+          </g>
+          
+          <g class="room" data-room="LIFT 1" data-floor="ground">
+            <rect x="120" y="50" width="40" height="40" fill="#333" />
+            <text x="140" y="70" class="room-label" text-anchor="middle">LIFT 1</text>
+          </g>
+          
+          <g class="room" data-room="LIFT 2" data-floor="ground">
+            <rect x="120" y="100" width="40" height="40" fill="#333" />
+            <text x="140" y="120" class="room-label" text-anchor="middle">LIFT 2</text>
+          </g>
+          
+          <g class="room" data-room="LIFT 3" data-floor="ground">
+            <rect x="850" y="270" width="40" height="40" fill="#333" />
+            <text x="870" y="290" class="room-label" text-anchor="middle">LIFT 3</text>
+          </g>
+          
+          <!-- Washrooms -->
+          <g class="room" data-room="Boys Washroom 1" data-floor="ground">
+            <rect x="120" y="150" width="60" height="40" fill="#3a506b" />
+            <text x="150" y="170" class="room-label" text-anchor="middle">Boys WR</text>
+          </g>
+          
+          <g class="room" data-room="Girls Washroom" data-floor="ground">
+            <rect x="400" y="450" width="60" height="40" fill="#6d597a" />
+            <text x="430" y="470" class="room-label" text-anchor="middle">Girls WR</text>
+          </g>
+          
+          <g class="room" data-room="Boys Washroom 2" data-floor="ground">
+            <rect x="470" y="450" width="60" height="40" fill="#3a506b" />
+            <text x="500" y="470" class="room-label" text-anchor="middle">Boys WR</text>
+          </g>
+        </svg>
+      </div>
+      
+      <!-- First Floor Map -->
+      <div class="floor-map" id="first-floor">
+        <svg class="map-svg" viewBox="0 0 1000 600">
+          <!-- Main outline -->
+          <rect x="50" y="50" width="900" height="500" fill="#121212" stroke="#444" stroke-width="2"></rect>
+          
+          <!-- Rooms -->
+          <g class="room" data-room="Administrative Office" data-floor="first">
+            <rect x="200" y="50" width="200" height="120" />
+            <text x="300" y="110" class="room-label" text-anchor="middle">Administrative Office</text>
+          </g>
+          
+          <g class="room" data-room="Principal's Office" data-floor="first">
+            <rect x="410" y="50" width="150" height="100" />
+            <text x="485" y="100" class="room-label" text-anchor="middle">Principal's Office</text>
+          </g>
+          
+          <g class="room" data-room="Training and Placement" data-floor="first">
+            <rect x="200" y="180" width="180" height="100" />
+            <text x="290" y="230" class="room-label" text-anchor="middle">Training and Placement</text>
+          </g>
+          
+          <g class="room" data-room="Faculty Room" data-floor="first">
+            <rect x="400" y="180" width="150" height="100" />
+            <text x="475" y="230" class="room-label" text-anchor="middle">Faculty Room (119)</text>
+          </g>
+          
+          <g class="room" data-room="Robotics Lab" data-floor="first">
+            <rect x="580" y="50" width="150" height="100" />
+            <text x="655" y="100" class="room-label" text-anchor="middle">Robotics Lab</text>
+          </g>
+          
+          <g class="room" data-room="Conference/Dean" data-floor="first">
+            <rect x="580" y="160" width="150" height="80" />
+            <text x="655" y="200" class="room-label" text-anchor="middle">Conference/Dean</text>
+          </g>
+          
+          <g class="room" data-room="AI/DS HOD Cabin" data-floor="first">
+            <rect x="740" y="160" width="100" height="80" />
+            <text x="790" y="200" class="room-label" text-anchor="middle">AI/DS HOD</text>
+          </g>
+          
+          <g class="room" data-room="Environmental Engg Lab" data-floor="first">
+            <rect x="200" y="350" width="180" height="100" />
+            <text x="290" y="400" class="room-label" text-anchor="middle">Environmental Engg Lab</text>
+          </g>
+          
+          <g class="room" data-room="CAD Centre" data-floor="first">
+            <rect x="400" y="350" width="150" height="100" />
+            <text x="475" y="400" class="room-label" text-anchor="middle">CAD Centre</text>
+          </g>
+          
+          <g class="room" data-room="Programming and Project Lab" data-floor="first">
+            <rect x="580" y="350" width="150" height="100" />
+            <text x="655" y="400" class="room-label" text-anchor="middle">Programming Lab</text>
+          </g>
+          
+          <g class="room" data-room="Exam Section" data-floor="first">
+            <rect x="740" y="350" width="150" height="100" />
+            <text x="815" y="400" class="room-label" text-anchor="middle">Exam Section</text>
+          </g>
+          
+          <g class="room" data-room="Devops Lab" data-floor="first">
+            <rect x="580" y="460" width="150" height="90" />
+            <text x="655" y="505" class="room-label" text-anchor="middle">Devops Lab</text>
+          </g>
+          
+          <g class="room" data-room="Record Room" data-floor="first">
+            <rect x="740" y="460" width="150" height="90" />
+            <text x="815" y="505" class="room-label" text-anchor="middle">Record Room</text>
+          </g>
+          
+          <!-- Stairs and Lifts (similar to ground floor) -->
+          <g class="room" data-room="Stairs 1" data-floor="first">
+            <rect x="50" y="50" width="50" height="80" fill="#444" />
+            <text x="75" y="90" class="room-label" text-anchor="middle">Stairs</text>
+          </g>
+          
+          <g class="room" data-room="LIFT 1" data-floor="first">
+            <rect x="120" y="50" width="40" height="40" fill="#333" />
+            <text x="140" y="70" class="room-label" text-anchor="middle">LIFT 1</text>
+          </g>
+          
+          <g class="room" data-room="LIFT 2" data-floor="first">
+            <rect x="120" y="100" width="40" height="40" fill="#333" />
+            <text x="140" y="120" class="room-label" text-anchor="middle">LIFT 2</text>
+          </g>
+          
+          <g class="room" data-room="LIFT 3" data-floor="first">
+            <rect x="850" y="270" width="40" height="40" fill="#333" />
+            <text x="870" y="290" class="room-label" text-anchor="middle">LIFT 3</text>
+          </g>
+          
+          <!-- Washrooms -->
+          <g class="room" data-room="Boys Washroom" data-floor="first">
+            <rect x="120" y="150" width="60" height="40" fill="#3a506b" />
+            <text x="150" y="170" class="room-label" text-anchor="middle">Boys WR</text>
+          </g>
+          
+          <g class="room" data-room="Girls Common Room" data-floor="first">
+            <rect x="400" y="450" width="100" height="60" fill="#6d597a" />
+            <text x="450" y="480" class="room-label" text-anchor="middle">Girls Common Room</text>
+          </g>
+        </svg>
+      </div>
+      
+      <!-- Second Floor Map -->
+      <div class="floor-map" id="second-floor">
+        <svg class="map-svg" viewBox="0 0 1000 600">
+          <!-- Main outline -->
+          <rect x="50" y="50" width="900" height="500" fill="#121212" stroke="#444" stroke-width="2"></rect>
+          
+          <!-- Rooms -->
+          <g class="room" data-room="Computer Lab 1" data-floor="second">
+            <rect x="580" y="50" width="150" height="100" />
+            <text x="655" y="100" class="room-label" text-anchor="middle">Computer Lab 1</text>
+          </g>
+          
+          <g class="room" data-room="Computer Lab 2" data-floor="second">
+            <rect x="740" y="50" width="150" height="100" />
+            <text x="815" y="100" class="room-label" text-anchor="middle">Computer Lab 2</text>
+          </g>
+          
+          <g class="room" data-room="COMP HOD Cabin" data-floor="second">
+            <rect x="600" y="180" width="100" height="80" />
+            <text x="650" y="220" class="room-label" text-anchor="middle">COMP HOD</text>
+          </g>
+          
+          <g class="room" data-room="IT HOD Cabin" data-floor="second">
+            <rect x="740" y="180" width="100" height="80" />
+            <text x="790" y="220" class="room-label" text-anchor="middle">IT HOD</text>
+          </g>
+          
+          <!-- Computer Labs -->
+          <g class="room" data-room="LAB 1" data-floor="second">
+            <rect x="150" y="290" width="100" height="80" />
+            <text x="200" y="330" class="room-label" text-anchor="middle">LAB 1</text>
+          </g>
+          
+          <g class="room" data-room="LAB 2" data-floor="second">
+            <rect x="260" y="290" width="100" height="80" />
+            <text x="310" y="330" class="room-label" text-anchor="middle">LAB 2</text>
+          </g>
+          
+          <g class="room" data-room="LAB 3" data-floor="second">
+            <rect x="370" y="290" width="100" height="80" />
+            <text x="420" y="330" class="room-label" text-anchor="middle">LAB 3</text>
+          </g>
+          
+          <g class="room" data-room="LAB 4" data-floor="second">
+            <rect x="480" y="290" width="100" height="80" />
+            <text x="530" y="330" class="room-label" text-anchor="middle">LAB 4</text>
+          </g>
+          
+          <g class="room" data-room="LAB 5" data-floor="second">
+            <rect x="590" y="290" width="100" height="80" />
+            <text x="640" y="330" class="room-label" text-anchor="middle">LAB 5</text>
+          </g>
+          
+          <g class="room" data-room="LAB 6" data-floor="second">
+            <rect x="700" y="290" width="100" height="80" />
+            <text x="750" y="330" class="room-label" text-anchor="middle">LAB 6</text>
+          </g>
+          
+          <g class="room" data-room="LAB 7" data-floor="second">
+            <rect x="150" y="380" width="100" height="80" />
+            <text x="200" y="420" class="room-label" text-anchor="middle">LAB 7</text>
+          </g>
+          
+          <g class="room" data-room="LAB 8" data-floor="second">
+            <rect x="260" y="380" width="100" height="80" />
+            <text x="310" y="420" class="room-label" text-anchor="middle">LAB 8</text>
+          </g>
+          
+          <g class="room" data-room="LAB 9" data-floor="second">
+            <rect x="370" y="380" width="100" height="80" />
+            <text x="420" y="420" class="room-label" text-anchor="middle">LAB 9</text>
+          </g>
+          
+          <g class="room" data-room="LAB 10" data-floor="second">
+            <rect x="480" y="380" width="100" height="80" />
+            <text x="530" y="420" class="room-label" text-anchor="middle">LAB 10</text>
+          </g>
+          
+          <g class="room" data-room="LAB 11" data-floor="second">
+            <rect x="590" y="380" width="100" height="80" />
+            <text x="640" y="420" class="room-label" text-anchor="middle">LAB 11</text>
+          </g>
+          
+          <g class="room" data-room="LAB 12" data-floor="second">
+            <rect x="700" y="380" width="100" height="80" />
+            <text x="750" y="420" class="room-label" text-anchor="middle">LAB 12</text>
+          </g>
+          
+          <g class="room" data-room="LAB 13" data-floor="second">
+            <rect x="150" y="470" width="200" height="80" />
+            <text x="250" y="510" class="room-label" text-anchor="middle">LAB 13</text>
+          </g>
+          
+          <g class="room" data-room="LAB 14" data-floor="second">
+            <rect x="360" y="470" width="200" height="80" />
+            <text x="460" y="510" class="room-label" text-anchor="middle">LAB 14</text>
+          </g>
+          
+          <!-- Class rooms -->
+          <g class="room" data-room="201" data-floor="second">
+            <rect x="150" y="50" width="100" height="80" />
+            <text x="200" y="90" class="room-label" text-anchor="middle">201</text>
+          </g>
+          
+          <g class="room" data-room="214" data-floor="second">
+            <rect x="260" y="50" width="100" height="80" />
+            <text x="310" y="90" class="room-label" text-anchor="middle">214</text>
+          </g>
+          
+          <g class="room" data-room="F.E. Faculty" data-floor="second">
+            <rect x="400" y="350" width="150" height="100" />
+            <text x="475" y="400" class="room-label" text-anchor="middle">F.E. Faculty</text>
+          </g>
+          
+          <g class="room" data-room="N.S.S." data-floor="second">
+            <rect x="580" y="470" width="100" height="80" />
+            <text x="630" y="510" class="room-label" text-anchor="middle">N.S.S.</text>
+          </g>
+          
+          <!-- Stairs and Lifts -->
+          <g class="room" data-room="Stairs 1" data-floor="second">
+            <rect x="50" y="50" width="50" height="80" fill="#444" />
+            <text x="75" y="90" class="room-label" text-anchor="middle">Stairs</text>
+          </g>
+          
+          <!-- Washrooms -->
+          <g class="room" data-room="Girls Washroom" data-floor="second">
+            <rect x="120" y="150" width="60" height="40" fill="#6d597a" />
+            <text x="150" y="170" class="room-label" text-anchor="middle">Girls WR</text>
+          </g>
+          
+          <g class="room" data-room="Boys Washroom" data-floor="second">
+            <rect x="260" y="150" width="60" height="40" fill="#3a506b" />
+            <text x="290" y="170" class="room-label" text-anchor="middle">Boys WR</text>
+          </g>
+          
+          <g class="room" data-room="Disable Washroom" data-floor="second">
+            <rect x="330" y="150" width="60" height="40" fill="#7f5a83" />
+            <text x="360" y="170" class="room-label" text-anchor="middle">Disable WR</text>
+          </g>
+        </svg>
+      </div>
+      
+      <!-- Third Floor Map -->
+      <div class="floor-map" id="third-floor">
+        <svg class="map-svg" viewBox="0 0 1000 600">
+          <!-- Main outline -->
+          <rect x="50" y="50" width="900" height="500" fill="#121212" stroke="#444" stroke-width="2"></rect>
+          
+          <!-- Rooms -->
+          <g class="room" data-room="Tutorial Room 1" data-floor="third">
+            <rect x="400" y="50" width="150" height="100" />
+            <text x="475" y="100" class="room-label" text-anchor="middle">Tutorial Room</text>
+          </g>
+          
+          <g class="room" data-room="Seminar Hall" data-floor="third">
+            <rect x="560" y="50" width="200" height="150" />
+            <text x="660" y="125" class="room-label" text-anchor="middle">Seminar Hall</text>
+          </g>
+          
+          <g class="room" data-room="Physics Lab" data-floor="third">
+            <rect x="560" y="210" width="150" height="100" />
+            <text x="635" y="260" class="room-label" text-anchor="middle">Physics Lab</text>
+          </g>
+          
+          <g class="room" data-room="Chemistry Lab" data-floor="third">
+            <rect x="720" y="210" width="150" height="100" />
+            <text x="795" y="260" class="room-label" text-anchor="middle">Chemistry Lab</text>
+          </g>
+          
+          <g class="room" data-room="Mechatronics Lab" data-floor="third">
+            <rect x="150" y="350" width="180" height="100" />
+            <text x="240" y="400" class="room-label" text-anchor="middle">Mechatronics Lab</text>
+          </g>
+          
+          <g class="room" data-room="Tutorial Room 2" data-floor="third">
+            <rect x="340" y="350" width="150" height="100" />
+            <text x="415" y="400" class="room-label" text-anchor="middle">Tutorial Room</text>
+          </g>
+          
+          <g class="room" data-room="Computer Lab 1" data-floor="third">
+            <rect x="500" y="350" width="150" height="100" />
+            <text x="575" y="400" class="room-label" text-anchor="middle">Computer Lab 1</text>
+          </g>
+          
+          <g class="room" data-room="Computer Lab 2" data-floor="third">
+            <rect x="660" y="350" width="150" height="100" />
+            <text x="735" y="400" class="room-label" text-anchor="middle">Computer Lab 2</text>
+          </g>
+          
+          <g class="room" data-room="CANTEEN" data-floor="third">
+            <rect x="150" y="460" width="350" height="90" />
+            <text x="325" y="505" class="room-label" text-anchor="middle">CANTEEN</text>
+
+        </g>
+          
+        <g class="room" data-room="Gymkhana" data-floor="third">
+          <rect x="520" y="460" width="280" height="90" />
+          <text x="660" y="505" class="room-label" text-anchor="middle">Gymkhana</text>
+        </g>
+        
+        <!-- Stairs and Lifts -->
+        <g class="room" data-room="Stairs 1" data-floor="third">
+          <rect x="50" y="50" width="50" height="80" fill="#444" />
+          <text x="75" y="90" class="room-label" text-anchor="middle">Stairs</text>
+        </g>
+        
+        <g class="room" data-room="LIFT 1" data-floor="third">
+          <rect x="120" y="50" width="40" height="40" fill="#333" />
+          <text x="140" y="70" class="room-label" text-anchor="middle">LIFT 1</text>
+        </g>
+        
+        <g class="room" data-room="LIFT 2" data-floor="third">
+          <rect x="120" y="100" width="40" height="40" fill="#333" />
+          <text x="140" y="120" class="room-label" text-anchor="middle">LIFT 2</text>
+        </g>
+        
+        <g class="room" data-room="LIFT 3" data-floor="third">
+          <rect x="850" y="270" width="40" height="40" fill="#333" />
+          <text x="870" y="290" class="room-label" text-anchor="middle">LIFT 3</text>
+        </g>
+        
+        <!-- Washrooms -->
+        <g class="room" data-room="Girls Washroom" data-floor="third">
+          <rect x="120" y="150" width="60" height="40" fill="#6d597a" />
+          <text x="150" y="170" class="room-label" text-anchor="middle">Girls WR</text>
+        </g>
+          
+        <g class="room" data-room="Boys Washroom" data-floor="third">
+          <rect x="400" y="450" width="60" height="40" fill="#3a506b" />
+          <text x="430" y="470" class="room-label" text-anchor="middle">Boys WR</text>
+        </g>
+        
+        <!-- Utilities -->
+        <g class="room" data-room="Drinking Water" data-floor="third">
+          <rect x="830" y="450" width="70" height="40" fill="#5d8aa8" />
+          <text x="865" y="470" class="room-label" text-anchor="middle">Water</text>
+        </g>
+        
+        <g class="room" data-room="Fire Extinguisher" data-floor="third">
+          <rect x="830" y="500" width="70" height="40" fill="#800000" />
+          <text x="865" y="520" class="room-label" text-anchor="middle">Fire Ext</text>
+        </g>
+      </svg>
+    </div>
+    
+    <!-- Fourth Floor Map -->
+    <div class="floor-map" id="fourth-floor">
+      <svg class="map-svg" viewBox="0 0 1000 600">
+        <!-- Main outline -->
+        <rect x="50" y="50" width="900" height="500" fill="#121212" stroke="#444" stroke-width="2"></rect>
+        
+        <!-- Rooms -->
+        <g class="room" data-room="EXTC HOD Cabin" data-floor="fourth">
+          <rect x="200" y="50" width="100" height="80" />
+          <text x="250" y="90" class="room-label" text-anchor="middle">EXTC HOD</text>
+        </g>
+        
+        <g class="room" data-room="Microwave and Antenna" data-floor="fourth">
+          <rect x="320" y="50" width="150" height="100" />
+          <text x="395" y="100" class="room-label" text-anchor="middle">Microwave and Antenna</text>
+        </g>
+        
+        <g class="room" data-room="VLSI Design" data-floor="fourth">
+          <rect x="480" y="50" width="150" height="100" />
+          <text x="555" y="100" class="room-label" text-anchor="middle">VLSI Design</text>
+        </g>
+        
+        <g class="room" data-room="Engineering Drawing Room" data-floor="fourth">
+          <rect x="640" y="50" width="200" height="150" />
+          <text x="740" y="125" class="room-label" text-anchor="middle">Engineering Drawing Room</text>
+        </g>
+        
+        <g class="room" data-room="Basic Electrical" data-floor="fourth">
+          <rect x="150" y="180" width="180" height="100" />
+          <text x="240" y="230" class="room-label" text-anchor="middle">Basic Electrical</text>
+        </g>
+        
+        <g class="room" data-room="Tutorial Room 1" data-floor="fourth">
+          <rect x="340" y="180" width="150" height="100" />
+          <text x="415" y="230" class="room-label" text-anchor="middle">Tutorial Room</text>
+        </g>
+        
+        <g class="room" data-room="Tutorial Room 2" data-floor="fourth">
+          <rect x="500" y="180" width="150" height="100" />
+          <text x="575" y="230" class="room-label" text-anchor="middle">Tutorial Room</text>
+        </g>
+        
+        <g class="room" data-room="Electronics Lab" data-floor="fourth">
+          <rect x="720" y="350" width="150" height="100" />
+          <text x="795" y="400" class="room-label" text-anchor="middle">Electronics Lab</text>
+        </g>
+        
+        <g class="room" data-room="Electronics Circuit" data-floor="fourth">
+          <rect x="550" y="350" width="150" height="100" />
+          <text x="625" y="400" class="room-label" text-anchor="middle">Electronics Circuit</text>
+        </g>
+        
+        <g class="room" data-room="Embedded System" data-floor="fourth">
+          <rect x="380" y="350" width="150" height="100" />
+          <text x="455" y="400" class="room-label" text-anchor="middle">Embedded System</text>
+        </g>
+        
+        <g class="room" data-room="Department of EXTC" data-floor="fourth">
+          <rect x="150" y="350" width="200" height="150" />
+          <text x="250" y="425" class="room-label" text-anchor="middle">Department of EXTC</text>
+        </g>
+        
+        <!-- Room numbers -->
+        <g class="room" data-room="Room 401" data-floor="fourth">
+          <rect x="120" y="250" width="80" height="60" />
+          <text x="160" y="280" class="room-label" text-anchor="middle">401</text>
+        </g>
+        
+        <g class="room" data-room="Room 402" data-floor="fourth">
+          <rect x="210" y="250" width="80" height="60" />
+          <text x="250" y="280" class="room-label" text-anchor="middle">402</text>
+        </g>
+        
+        <g class="room" data-room="Room 403" data-floor="fourth">
+          <rect x="300" y="250" width="80" height="60" />
+          <text x="340" y="280" class="room-label" text-anchor="middle">403</text>
+        </g>
+        
+        <!-- Stairs and Lifts -->
+        <g class="room" data-room="Stairs 1" data-floor="fourth">
+          <rect x="50" y="50" width="50" height="80" fill="#444" />
+          <text x="75" y="90" class="room-label" text-anchor="middle">Stairs</text>
+        </g>
+        
+        <g class="room" data-room="LIFT 1" data-floor="fourth">
+          <rect x="120" y="50" width="40" height="40" fill="#333" />
+          <text x="140" y="70" class="room-label" text-anchor="middle">LIFT 1</text>
+        </g>
+        
+        <g class="room" data-room="LIFT 2" data-floor="fourth">
+          <rect x="120" y="100" width="40" height="40" fill="#333" />
+          <text x="140" y="120" class="room-label" text-anchor="middle">LIFT 2</text>
+        </g>
+        
+        <g class="room" data-room="LIFT 3" data-floor="fourth">
+          <rect x="850" y="270" width="40" height="40" fill="#333" />
+          <text x="870" y="290" class="room-label" text-anchor="middle">LIFT 3</text>
+        </g>
+        
+        <!-- Washrooms -->
+        <g class="room" data-room="Girls Washroom" data-floor="fourth">
+          <rect x="120" y="150" width="60" height="40" fill="#6d597a" />
+          <text x="150" y="170" class="room-label" text-anchor="middle">Girls WR</text>
+        </g>
+        
+        <g class="room" data-room="Boys Washroom" data-floor="fourth">
+          <rect x="400" y="450" width="60" height="40" fill="#3a506b" />
+          <text x="430" y="470" class="room-label" text-anchor="middle">Boys WR</text>
+        </g>
+        
+        <!-- Utilities -->
+        <g class="room" data-room="Drinking Water" data-floor="fourth">
+          <rect x="830" y="450" width="70" height="40" fill="#5d8aa8" />
+          <text x="865" y="470" class="room-label" text-anchor="middle">Water</text>
+        </g>
+        
+        <g class="room" data-room="Fire Extinguisher" data-floor="fourth">
+          <rect x="830" y="500" width="70" height="40" fill="#800000" />
+          <text x="865" y="520" class="room-label" text-anchor="middle">Fire Ext</text>
+        </g>
+      </svg>
+    </div>
+    
+    <!-- Fifth Floor Map -->
+    <div class="floor-map" id="fifth-floor">
+      <svg class="map-svg" viewBox="0 0 1000 600">
+        <!-- Main outline -->
+        <rect x="50" y="50" width="900" height="500" fill="#121212" stroke="#444" stroke-width="2"></rect>
+        
+        <!-- Rooms -->
+        <g class="room" data-room="Computer Center" data-floor="fifth">
+          <rect x="480" y="50" width="350" height="200" />
+          <text x="655" y="150" class="room-label" text-anchor="middle">Computer Center</text>
+        </g>
+        
+        <g class="room" data-room="Library" data-floor="fifth">
+          <rect x="200" y="300" width="400" height="200" />
+          <text x="400" y="400" class="room-label" text-anchor="middle">Library</text>
+        </g>
+        
+        <g class="room" data-room="MMS Staff Room" data-floor="fifth">
+          <rect x="150" y="50" width="150" height="100" />
+          <text x="225" y="100" class="room-label" text-anchor="middle">MMS Staff Room</text>
+        </g>
+        
+        <g class="room" data-room="Department of MMS" data-floor="fifth">
+          <rect x="150" y="160" width="150" height="100" />
+          <text x="225" y="210" class="room-label" text-anchor="middle">Department of MMS</text>
+        </g>
+        
+        <g class="room" data-room="Council Room" data-floor="fifth">
+          <rect x="310" y="50" width="150" height="100" />
+          <text x="385" y="100" class="room-label" text-anchor="middle">Council Room</text>
+        </g>
+        
+        <g class="room" data-room="Tutorial Room" data-floor="fifth">
+          <rect x="310" y="160" width="150" height="100" />
+          <text x="385" y="210" class="room-label" text-anchor="middle">Tutorial Room</text>
+        </g>
+        
+        <g class="room" data-room="DBMS LAB" data-floor="fifth">
+          <rect x="620" y="300" width="150" height="90" />
+          <text x="695" y="345" class="room-label" text-anchor="middle">DBMS LAB</text>
+        </g>
+        
+        <g class="room" data-room="OS LAB" data-floor="fifth">
+          <rect x="620" y="400" width="150" height="90" />
+          <text x="695" y="445" class="room-label" text-anchor="middle">OS LAB</text>
+        </g>
+        
+        <g class="room" data-room="Store Room" data-floor="fifth">
+          <rect x="780" y="350" width="100" height="80" />
+          <text x="830" y="390" class="room-label" text-anchor="middle">Store Room</text>
+        </g>
+        
+        <!-- Stairs and Lifts -->
+        <g class="room" data-room="Stairs 1" data-floor="fifth">
+          <rect x="50" y="50" width="50" height="80" fill="#444" />
+          <text x="75" y="90" class="room-label" text-anchor="middle">Stairs</text>
+        </g>
+        
+        <g class="room" data-room="LIFT 1" data-floor="fifth">
+          <rect x="120" y="50" width="40" height="40" fill="#333" />
+          <text x="140" y="70" class="room-label" text-anchor="middle">LIFT 1</text>
+        </g>
+        
+        <g class="room" data-room="LIFT 2" data-floor="fifth">
+          <rect x="120" y="100" width="40" height="40" fill="#333" />
+          <text x="140" y="120" class="room-label" text-anchor="middle">LIFT 2</text>
+        </g>
+        
+        <g class="room" data-room="LIFT 3" data-floor="fifth">
+          <rect x="850" y="270" width="40" height="40" fill="#333" />
+          <text x="870" y="290" class="room-label" text-anchor="middle">LIFT 3</text>
+        </g>
+        
+        <!-- Washrooms -->
+        <g class="room" data-room="Girls Washroom" data-floor="fifth">
+          <rect x="120" y="150" width="60" height="40" fill="#6d597a" />
+          <text x="150" y="170" class="room-label" text-anchor="middle">Girls WR</text>
+        </g>
+        
+        <g class="room" data-room="Boys Washroom" data-floor="fifth">
+          <rect x="400" y="250" width="60" height="40" fill="#3a506b" />
+          <text x="430" y="270" class="room-label" text-anchor="middle">Boys WR</text>
+        </g>
+        
+        <!-- Utilities -->
+        <g class="room" data-room="Drinking Water" data-floor="fifth">
+          <rect x="830" y="450" width="70" height="40" fill="#5d8aa8" />
+          <text x="865" y="470" class="room-label" text-anchor="middle">Water</text>
+        </g>
+        
+        <g class="room" data-room="Fire Extinguisher" data-floor="fifth">
+          <rect x="830" y="500" width="70" height="40" fill="#800000" />
+          <text x="865" y="520" class="room-label" text-anchor="middle">Fire Ext</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+  
+  <div class="location-info" id="location-info">
+    <h4>Location Information</h4>
+    <p id="room-name">Select a room to see details</p>
+    <p id="floor-info"></p>
+  </div>
+  
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-color" style="background-color: #252538;"></div>
+      <span>Regular Rooms</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background-color: #333;"></div>
+      <span>Lifts</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background-color: #444;"></div>
+      <span>Stairs</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background-color: #6d597a;"></div>
+      <span>Girls Facilities</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background-color: #3a506b;"></div>
+      <span>Boys Facilities</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background-color: #5d8aa8;"></div>
+      <span>Water</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background-color: #800000;"></div>
+      <span>Fire Safety</span>
+    </div>
+  </div>
+</div>
+<script src="scripts/map.js"></script>
+</body>
+</html>
